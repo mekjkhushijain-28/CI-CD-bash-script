@@ -1,0 +1,23 @@
+{
+  "family": "ecs-logger-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::299369991210:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "ecs_bash_script",
+      "image": "299369991210.dkr.ecr.us-east-2.amazonaws.com/ecs_bash_script:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ecs-logger",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
