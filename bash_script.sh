@@ -2,6 +2,6 @@
 
 while true
 do
-  echo "$(date) - ECS container is running" - updated
+  echo "$(date) - ECS container is running - updated"
   sleep 5
 done
